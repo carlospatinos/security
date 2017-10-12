@@ -11,14 +11,13 @@ def applyLogic(multiplier, valueAdded):
     inputFile = open( inputFileName, "rb")
     bytearr = map (ord, inputFile.read () )
     outoutFile = open( outputFileName, "wb" )
+    key = long(longIntKey) 
+    random.seed(key)
     for i in range(len(bytearr)):
-        byt = (bytearr[i] + (multiplier * random.randint(0, 255)) + valueAdded) % 256
+        byt = (bytearr[i] + (multiplier * random.randint(0, 255)) + (valueAdded*256) ) % 256
         outoutFile.write(chr(byt))
     outoutFile.close()
     inputFile.close()
-
-key = long(longIntKey) 
-random.seed(key)
 
 # encryption
 if mode == "e": 
@@ -26,4 +25,4 @@ if mode == "e":
 
 # decryption
 if mode == "d": 
-    applyLogic(-1, 256)
+    applyLogic(-1, 1)
