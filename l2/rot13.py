@@ -1,11 +1,17 @@
 import string
+import sys
+
 rot13 = string.maketrans( 
     "ABCDEFGHIJKLMabcdefghijklmNOPQRSTUVWXYZnopqrstuvwxyz", 
     "NOPQRSTUVWXYZnopqrstuvwxyzABCDEFGHIJKLMabcdefghijklm")
-print string.translate("Uryyb Jbeyq!", rot13)   
 
-if len(sys.argv) != 3:
-    print "Usage: rot13.py e/d message"
+if len(sys.argv) != 2:
+    print "Usage: rot13.py message"
     sys.exit()
 
-mode,plaintext=sys.argv[1],sys.argv[2]
+text=sys.argv[1]
+
+def applyLogic(value):
+    print string.translate(value, rot13)
+
+applyLogic(text)
