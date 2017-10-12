@@ -5,7 +5,6 @@ NUMBER_CHARACTERS=26
 L2I = dict(zip(ALPHABET, range(NUMBER_CHARACTERS)))
 I2L = dict(zip(range(NUMBER_CHARACTERS), ALPHABET))
 
-
 if len(sys.argv) != 4:
     print "Usage: caesarCypher.py e/d key message"
     sys.exit()
