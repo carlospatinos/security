@@ -1,0 +1,2 @@
+MD5(file2.txt)= ce306d379d43ff687d318006c62558b7
+SHA1(file2.txt)= 2f73faa20ff4c6e2e69739de0bff2ce2268805ab

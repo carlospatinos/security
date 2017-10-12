@@ -1,0 +1,2 @@
+MD5(file.txt)= 8fa94e1b942222bf3e985a3b49cc8296
+SHA1(file.txt)= f57bee2227edf198492328ec43c6d6f3c9f43087
