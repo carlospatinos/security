@@ -15,3 +15,4 @@ def applyLogic(value):
     print string.translate(value, rot13)
 
 applyLogic(text)
+
