@@ -1,0 +1,37 @@
+  100  md5sum nOOB
+  105  sublime echo -n "nOOB" | openssl md5 
+  149  echo -n "nOOB" | openssl md5
+  233  tail -f md5Generated.txt 
+  234  vi md5Generated.txt 
+  235  wc -l md5Generated.txt 
+  236  grep "c89aa2ffb9edcc6604005196b5f0e0e4" md5Generated.txt 
+  247  echo -n "nOOB" | openssl md5
+  260  echo -n "booN" | openssl md5
+  261  echo -n "Noob" | openssl md5
+  262  echo -n "ecsc" | openssl md5
+  263  echo -n "ECSC" | openssl md5
+  264  echo -n "ecsc" | openssl md5
+  265  echo -n "ecsc" | openssl md5 | openssl md5
+  268  chmod md5Loop.sh 
+  269  chmod a+x md5Loop.sh 
+  270  ./md5Loop.sh 
+  271  echo -n "ecsc" | openssl md5
+  272  ./md5Loop.sh 
+  273  mv md5Loop.sh 01\ -\ Mini\ Challenges/
+  276  ./md5Loop.sh > md5Generated.txt
+  279  ./md5Loop.sh > ECSC_md5Generated.txt
+  280  wc -l ECSC_md5Generated.txt 
+  281  mv ECSC_md5Generated.txt 2ECSC_md5Generated.txt 
+  282  mv ecsc_md5Generated.txt 1ecsc_md5Generated.txt 
+  283  ./md5Loop.sh > 1ecsc_md5Generated.txt 
+  284  ./md5Loop.sh > 2ECSC_md5Generated.txt 
+  285  ./md5Loop.sh 
+  286  ./md5Loop.sh > 3Noob_md5Generated.txt 
+  287  ./md5Loop.sh > 1ecsc_md5Generated.txt 
+  288  ./md5Loop.sh > 1ecsc_md5Generated_2.txt 
+  289  ./md5Loop.sh > 1ecsc_md5Generated_3.txt 
+  291  ./md5Loop.sh > 1ecsc_md5Generated.txt 
+  314  history | grep md5
+  398  diff output_md5_sha1.txt output_updated_md5_sha1.txt 
+ 1020  history | grep md5
+ 1021  history | grep md5 > tmp.txt

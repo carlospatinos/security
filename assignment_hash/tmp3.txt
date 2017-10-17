@@ -1,0 +1,1 @@
+echo -n nOOB | openssl md5 | sed -e "s/(stdin)= //"
