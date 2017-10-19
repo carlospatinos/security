@@ -20,11 +20,11 @@ from string import *
 # every time.
 
 #https://github.com/carlospatinos/SecLists
-#PASWORD_DICTIONARY_FILE="/home/ecapati/development/security/pass/10_million_password_list_top_1000.txt"
+PASWORD_DICTIONARY_FILE="/home/ecapati/development/security/pass/10_million_password_list_top_1000000.txt"
 #PASWORD_DICTIONARY_FILE="password.lst"
 #PASWORD_DICTIONARY_FILE="numbers5.txt"
 #PASWORD_DICTIONARY_FILE="numbers6.txt"
-PASWORD_DICTIONARY_FILE="numbers7.txt"
+#PASWORD_DICTIONARY_FILE="numbers7.txt"
 
 
 class DataOutput:
@@ -40,16 +40,19 @@ tableData = TableData()
 
 commonWords = ["www.exploringsecurity.com", "exploringsecurity.com", "exploringsecurity"]
 
-def generateArrayOfPossibleValuesBasedOnPolicy(modifiedDate):
-    #if date is before May 2010 => 5-7 digits
-    #if after => alphanumeric, 5-7 chars in length
-    return 0
-
 def computeCryptoHash(stringVal):
-    #print "Encoding {}".format(stringVal)
-    m = hashlib.sha1()
-    m.update(stringVal.encode('utf-8'))
-    return m.hexdigest()
+    hashValue = ""
+    try:
+        m = hashlib.sha1()
+        m.update(stringVal.encode('utf-8'))
+        hashValue = m.hexdigest()
+    except UnicodeEncodeError as e:
+        print "Error {}: with {}".format(e.args[0], stringVal)
+        pass
+    except:
+        print "Error with {}".format(stringVal)
+        pass
+    return hashValue
     
 def combineCommonWordsAndPass(passwordFromDictionary, allHashList):
     for commonWord in commonWords:
